@@ -1,12 +1,13 @@
 package service
 
 import (
-	"github.com/joho/godotenv"
 	"log"
 	"net/http"
 	"net/http/httptest"
 	"os"
 	"testing"
+
+	"github.com/joho/godotenv"
 )
 
 func TestService_CalculateDistance(t *testing.T) {

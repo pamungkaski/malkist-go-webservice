@@ -1,10 +1,13 @@
 package service
 
 import (
-	"github.com/gin-gonic/gin"
-	"github.com/pamungkaski/malkist-go"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
+
+	"github.com/pamungkaski/malkist-go"
 )
+
 // DistanceMatrixRequest is the struct to wrap distance-matrix endpoint hit request params.
 type DistanceMatrixRequest struct {
 	Origins      []string `form:"origins"`

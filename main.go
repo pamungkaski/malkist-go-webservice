@@ -1,10 +1,12 @@
 package main
 
 import (
-	"github.com/joho/godotenv"
-	"github.com/pamungkaski/malkist-go-webservice/service"
 	"log"
 	"os"
+
+	"github.com/joho/godotenv"
+
+	"github.com/pamungkaski/malkist-go-webservice/service"
 )
 
 // Main function will create the service using environment variable from .env file.
