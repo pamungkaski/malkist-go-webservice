@@ -5,13 +5,14 @@ import (
 	"github.com/pamungkaski/malkist-go"
 	"net/http"
 )
-
+// DistanceMatrixRequest is the struct to wrap distance-matrix endpoint hit request params.
 type DistanceMatrixRequest struct {
 	Origins      []string `form:"origins"`
 	Destinations []string `form:"destinations"`
 	Key          string   `form:"key"`
 }
 
+// It is the handler of distance-matrix endpoint. it will use malkist-go CalculateDistance function for it to work.
 func (s Service) CalculateDistance(ctx *gin.Context) {
 	var req DistanceMatrixRequest
 

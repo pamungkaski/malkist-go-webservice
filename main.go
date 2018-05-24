@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// Main function will create the service using environment variable from .env file.
 func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Fatal("Error loading .env file :", err.Error())
