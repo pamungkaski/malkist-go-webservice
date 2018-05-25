@@ -16,11 +16,18 @@ func distanceMatrix(m malkist.Malkist) {
 	var strorigin string
 	fmt.Scanln(&strorigin)
 
-	norigin, _ := strconv.Atoi(strorigin)
+	norigin, err := strconv.Atoi(strorigin)
+	if err != nil {
+		log.Fatalf("Error on converting integer: %v\n", err.Error())
+	}
+
 	var origins []string
 	for i := 0; i < norigin; i += 1{
 		fmt.Printf("%v origins: ", i + 1)
-		strorigin, _ := reader.ReadString('\n')
+		strorigin, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatalf("Error on reading input: %v\n", err.Error())
+		}
 		origins = append(origins, strorigin)
 	}
 
@@ -28,15 +35,22 @@ func distanceMatrix(m malkist.Malkist) {
 	var strdest string
 	fmt.Scanln(&strdest)
 
-	nodest, _ := strconv.Atoi(strdest)
+	nodest, err := strconv.Atoi(strdest)
+	if err != nil {
+		log.Fatalf("Error on converting integer: %v\n", err.Error())
+	}
+
 	var destinations []string
 	for i := 0; i < nodest; i += 1{
 		fmt.Printf("%v origins: ", i + 1)
-		strdest, _ := reader.ReadString('\n')
+		strdest, err := reader.ReadString('\n')
+		if err != nil {
+			log.Fatalf("Error on reading input: %v\n", err.Error())
+		}
 		destinations = append(destinations, strdest)
 	}
 	var dest []malkist.DistanceMatrix
-	dest, err := m.CalculateDistance(origins, destinations)
+	dest, err = m.CalculateDistance(origins, destinations)
 	if err != nil {
 		log.Fatalf("Error on calculating distance: %v", err.Error())
 	}
