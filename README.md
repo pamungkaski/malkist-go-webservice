@@ -66,6 +66,12 @@ You can look for the endpoint documentation **[HERE](https://documenter.getpostm
 run :
     
     $ go test -v ./...
+
+### Console Program
+Run:
+
+    $ cd cmd && cd src && go build -o ../binary/malkist -v && cd .. && cd ..
+    $ ./cmd/binary/malkist
     
 ## Contributing
 
